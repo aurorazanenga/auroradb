@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   
+	<meta charset="utf-8">
+	<title>ospedale</title>
+	<style>
+
+	body {
+		font-family: helvetica;
+		background-color: #FFFFFF;
+	     }
+
+	header {
+		background-color: #BDF2FF;
+		-webkit-border-radius: 8px 8px 8px 8px; 
+		
+	        }
+	img {
+		margin-left:10%
+	    }
+
+	section p 
+		{
+	       margin-left: 2%;
+            color: black;
+	        }
+
+	section {
+		  float: right;
+		  width: 100%;
+          height: 400px;
+          margin-left: 2%;
+		  background-color: #BDF2FF;
+		  border-radius: 1px 1px 1px 1px; 
+		  -moz-border-radius: 1px 1px 1px 1px; 
+		  -webkit-border-radius: 8px 8px 8px 8px; 
+	      }
+
+        {box-sizing: border-box}
+
+/* Style the tab */
+.tab {
+  float: left;
+ /* border: 1px solid #ccc;*/
+  background-color: #E9FBFF;
+  width: 20%;
+  height: 100%;
+  -webkit-border-radius: 8px 8px 8px 8px;
+    
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  -webkit-border-radius: 8px 8px 8px 8px;
+    
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #BDF2FF;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #BDF2FF;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none; /*non fa apparire la parte dei contenuti al caricamento iniziale*/
+  float:left;
+  padding: 0px 12px;
+  /*border: 1px solid #ccc;*/
+  width: 70%;
+  height: 100%;
+}
+        
+aside { 
+border-radius: 1px 1px 1px 1px; 
+-moz-border-radius: 1px 1px 1px 1px; 
+-webkit-border-radius: 8px 8px 8px 8px;
+width: 10%;
+height: 50%;
+	      }
+
+
+	</style>
+
+   </head>
+  
+<body>
+
+<header>
+<br><br>
+    <aside>
+      <img src="logogrigio.png">
+    </aside>
+    <br><br>
+</header>
+    <br>
+<body>
+
+<section>
+        
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Dottore')">Dottore</button>
+  <button class="tablinks" onclick="openCity(event, 'Infermiere')">Infermiere</button>
+  <button class="tablinks" onclick="openCity(event, 'Admin')">Admin</button>
+</div>
+
+<div id="Dottore" class="tabcontent">
+  <br><br>&nbsp;&nbsp;<legend><b>Login</b></legend>
+    <p> &nbsp;&nbsp; Inserisci user id e passsword per accedere</p>    
+        <form action="loginDoc.php" method="post">
+        <p>
+           &nbsp;&nbsp; ID Personale: <input required type="text" name="id">
+        </p>
+        <p>
+            &nbsp;&nbsp;<input type="submit" name="login" value="login">&nbsp;&nbsp;
+            &nbsp;&nbsp;<input type="reset" name="cancella" value="Annulla" />
+        </p>   </form>    
+
+</div>
+
+<div id="Infermiere" class="tabcontent">
+<br><br>
+    &nbsp;&nbsp;<legend><b>Login</b></legend>
+    <p> &nbsp;&nbsp; Inserisci user id e passsword per accedere</p>    
+        <form action="loginInf.php" method="post">
+        <p>
+            &nbsp;&nbsp; ID Personale: <input required type="text" name="id">
+        </p>
+        <p>
+           &nbsp;&nbsp; <input type="submit" name="login" value="login">
+           &nbsp;&nbsp;&nbsp;&nbsp; <input type="reset" name="cancella" value="Annulla" />
+        </p>   </form>    
+
+</div>
+
+<div id="Admin" class="tabcontent">
+ <br><br>
+    &nbsp;&nbsp;<legend><b>Login</b></legend>
+    <p>&nbsp;&nbsp; Inserisci user id e passsword per accedere</p>    
+        <form action="loginAdmin.php" method="post">
+        <p>
+            &nbsp;&nbsp;  ID Personale: <input required type="text" name="id">
+            
+            <br><br> &nbsp;&nbsp; Password: <input required type="password" name="psswd">
+        </p>
+        <p>
+            &nbsp;&nbsp;<input type="submit" name="login" value="login">&nbsp;&nbsp;
+            &nbsp;&nbsp;<input type="reset" name="cancella" value="Annulla" />
+        </p>   </form>    
+
+</div>
+    
+
+</section>
+     <script>
+            
+function openCity(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the link that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+        </script>
+<br><br>
+</body>
+<footer>
+</footer>
